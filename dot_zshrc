@@ -147,3 +147,11 @@ if [ -n "$TMUX" ]; then
     exit
   }'
 fi
+
+# Set TZ
+export TZ="America/Los_Angeles"
+
+# Apply any custom aliases per machine
+for file in ~/.zshalias_*(N); do
+    source "$file"
+done
