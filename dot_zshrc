@@ -113,6 +113,11 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Apply any custom aliases per machine
+for file in ~/.zshalias_*(N); do
+    source "$file"
+done
+
 # Startup with tmux
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     attach=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' | grep 'not attached$' | tail -n 1 | cut -d '|' -f1)
@@ -151,7 +156,3 @@ fi
 # Set TZ
 export TZ="America/Los_Angeles"
 
-# Apply any custom aliases per machine
-for file in ~/.zshalias_*(N); do
-    source "$file"
-done
