@@ -1,0 +1,13 @@
+[user]
+	name = Andistar12
+	email = nguyenandy41@gmail.com
+[color]
+    ui = auto
+[core]
+    pager = less -FMRiX
+[push]
+    default = simple
+[pull]
+    rebase = true
+[alias]
+	dag = log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(white)- %an%C(reset)' --all
