@@ -120,7 +120,7 @@ done
 
 # Startup with tmux
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    attach=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' | grep 'not attached$' | tail -n 1 | cut -d '|' -f1)
+    attach=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' 3&>/dev/null | tail -n 1 | cut -d '|' -f1)
     tmux attach -t $attach 2> /dev/null || tmux
     exit
 fi
