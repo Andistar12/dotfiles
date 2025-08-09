@@ -77,8 +77,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions aws catimg colored-man-pages docker docker-compose nvm ssh)
-
+if [[ ! -d "$ZSH_CUSTOM/plugins/zsh-vi-mode" ]]; then
+    print -P "Installing oh-my-zsh plugin \033[1;36mzsh-vi-mode\033[0m ..."
+    git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
+fi
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions aws catimg colored-man-pages docker docker-compose nvm ssh zsh-vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
