@@ -1,0 +1,7 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "jq -r '(.model.display_name // \"Claude\") as $m | (.workspace.current_dir | sub(\"^/Users/[^/]+\"; \"~\")) as $d | (.context_window.total_input_tokens // 0) as $t | (.context_window.total_output_tokens // 0) as $ot | (.context_window.used_percentage // 0) as $p | (.effort.level // \"\") as $el | (.cost.total_duration_ms // 0) as $ms | (($t / 1000 | round) | tostring) as $tk | (($ot / 1000 | round) | tostring) as $otk | ($ms / 1000 | floor) as $tot_sec | ($tot_sec / 3600 | floor) as $hr | (($tot_sec % 3600) / 60 | floor) as $min | ($tot_sec % 60) as $sec | (if $hr > 0 then ($hr|tostring) + \"h \" else \"\" end + if $min > 0 or $hr > 0 then ($min|tostring) + \"m \" else \"\" end + ($sec|tostring) + \"s\") as $time_str | \"\\u001b[36m\" + $m + \"\\u001b[0m | \\u001b[33m\" + $tk + \"k \" + $otk + \"k (\" + ($p|tostring) + \"%)\\u001b[0m\" + (if $el != \"\" and $el != \"null\" then \" | \\u001b[35m\" + $el + \"\\u001b[0m\" else \"\" end) + \" | \\u001b[90m\" + $d + \"\\u001b[0m | \\u001b[90m\" + $time_str + \"\\u001b[0m\"'"
+  }
+}
+
