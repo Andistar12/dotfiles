@@ -7,6 +7,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-obsession'
 Plug 'vim-latex/vim-latex'
 Plug 'wincent/terminus'
+Plug 'mhinz/vim-startify'
+Plug 'terryma/vim-smooth-scroll'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 " Remove delay with ESC
@@ -30,7 +33,6 @@ set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 set number
 set ruler
-set pastetoggle=<F2>
 
 " lol
 cmap w!! w !sudo tee > /dev/null %
