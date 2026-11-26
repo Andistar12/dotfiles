@@ -1,0 +1,16 @@
+{
+  "lastChangelogVersion": "1.6.1",
+  "packages": [
+    "npm:pi-loop-police",
+    "npm:pi-btw",
+    "npm:billion-context",
+    "npm:context-mode"
+  ],
+  "theme": "dark",
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.90.0"
+  },
+  "defaultProvider": "google",
+  "defaultModel": "gemma-4-31b-it",
+  "hideThinkingBlock": true
+}
