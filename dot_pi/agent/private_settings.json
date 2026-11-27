@@ -3,13 +3,9 @@
   "packages": [
     "npm:pi-loop-police",
     "npm:pi-btw",
-    "npm:billion-context",
-    "npm:context-mode"
+    "npm:billion-context"
   ],
   "theme": "dark",
-  "extensionChangelogVersions": {
-    "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.90.0"
-  },
   "defaultProvider": "google",
   "defaultModel": "gemma-4-31b-it",
   "hideThinkingBlock": true
